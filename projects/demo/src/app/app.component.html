@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-title>Overview</mat-card-title>
+  <mat-card-content>
+    For full instructions on click
+    <a
+      href="https://github.com/JayChase/angular2-highlight-js/blob/master/README.md"
+      target="_blank"
+      >here</a
+    >. To find out more about highlight.js can be found
+    <a href="https://highlightjs.org/usage/" target="_blank">here</a>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Using the HighlightJsContent directive</mat-card-title>
+  <mat-card-content>
+    <p>
+      Use this directive to handle dynamic content which contains snippets. Both
+      the sections below have innerHTML bound to the the sampleContent property.
+    </p>
+    <h4>Raw pre code without highlighting</h4>
+    <section [innerHTML]="sampleContent"></section>
+    <h4>Add dynamic content and highlight it</h4>
+    <section
+      [innerHTML]="dynamicContent"
+      hljsContent=".highlight"
+      [options]="{ useBr: true }"
+    ></section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      id="btnAddContent"
+      mat-raised-button
+      color="primary"
+      (click)="addContent()"
+      [disabled]="!!dynamicContent"
+    >
+      add content
+    </button>
+  </mat-card-actions>
+</mat-card>
